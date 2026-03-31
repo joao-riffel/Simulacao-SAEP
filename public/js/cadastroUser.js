@@ -1,16 +1,14 @@
-const form = document.getElementById("formCadastro");
+const form = document.getElementById("formCadastroUsuario");
 const mensagem = document.getElementById("mensagem");
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const nome = document.getElementById("nome").value;
-  const idade = document.getElementById("idade").value;
   const email = document.getElementById("email").value;
 
   const usuario = {
     nome,
-    idade: Number(idade), 
     email
   };
 
