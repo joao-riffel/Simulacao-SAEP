@@ -9,20 +9,22 @@
 
     <h1>Cadastro de Tarefa</h1>
 
-    <input id="descricao" placeholder="Descrição" type="text">
-    <input id="setor" placeholder="Setor" type="text">
-
-    <label for="usuario">Usuário:</label>
-    <input type="text" id="usuario" name="usuario" value=""> 
-
-    <label for="prioridade">Prioridade:</label>
-    <select id="prioridade" name="prioridade">
-        <option value="baixa">Baixa</option>
-        <option value="media">Média</option>
-        <option value="alta">Alta</option>
-    </select>
-
-    <button onclick="cadastrarTarefa()">Cadastrar</button>
+    <form id="formCadastroTarefa" action="">
+        <input id="descricao" placeholder="Descrição" type="text">
+        <input id="setor" placeholder="Setor" type="text">
+    
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" value=""> 
+    
+        <label for="prioridade">Prioridade:</label>
+        <select id="prioridade" name="prioridade">
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+        </select>
+    
+        <button onclick="cadastrarTarefa()">Cadastrar</button>
+    </form>
 
 </body>
 </html>
