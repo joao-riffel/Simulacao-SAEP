@@ -4,16 +4,16 @@ const mensagem = document.getElementById("mensagem");
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  const descricao = document.getElementById("descricao").value;
-  const setor = document.getElementById("setor").value;
-  const user = document.getElementById("usuario").value;
-  const prioridade =  document.getElementById("prioridade").value; 
+  const descricao_tarefa = document.getElementById("descricao_tarefa").value;
+  const setor_tarefa = document.getElementById("setor_tarefa").value;
+  const usuario_id = document.getElementById("usuario").value;
+  const prioridade_tarefa =  document.getElementById("prioridade_tarefa").value; 
 
   const tarefa = {
-    descricao,
-    setor,
-    user,
-    prioridade
+    descricao_tarefa,
+    setor_tarefa,
+    usuario_id,
+    prioridade_tarefa
   };
 
   try {

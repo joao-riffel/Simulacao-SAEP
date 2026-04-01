@@ -4,12 +4,12 @@ const mensagem = document.getElementById("mensagem");
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
+  const nome_usuario = document.getElementById("nome_usuario").value;
+  const email_usuario = document.getElementById("email_usuario").value;
 
   const usuario = {
-    nome,
-    email
+    nome_usuario,
+    email_usuario
   };
 
   try {

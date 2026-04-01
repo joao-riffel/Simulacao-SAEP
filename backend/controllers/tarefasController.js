@@ -1,11 +1,11 @@
-const usuariosService = require("../services/tarefasService");
+const tarefasService = require("../services/tarefasService");
 
 async function buscarTarefa(req, res) {
     
     try {
-        const id = Number(req.params.id);
+        const id_tarefa = Number(req.params.id_tarefa);
 
-        const tarefas = await usuariosService.buscarTarefaPorId(id);
+        const tarefas = await usuariosService.buscarTarefaPorId(id_tarefa);
 
         if (tarefas.length === 0) {
             return res.status(404).json({
@@ -27,13 +27,13 @@ async function criarTarefa(req, res) {
 
     try {
 
-        const { descricao, setor, user, prioridade } = req.body;
+        const { descricao_tarefa, setor_tarefa, usuario_id, prioridade_tarefa } = req.body;
 
-        const tarefas = await tarefasService.criarTarefa(descricao, setor, user, prioridade);
+        const tarefa = await tarefasService.criarTarefa(descricao_tarefa, setor_tarefa, usuario_id, prioridade_tarefa);
 
         res.status(201).json({
             mensagem: "Tarefa criada com sucesso",
-            usuario
+            tarefa
         });
 
     } catch (erro) {
@@ -48,10 +48,10 @@ async function criarTarefa(req, res) {
 
 async function atualizarTarefa(req, res) {
 
-    const id = Number(req.params.id);
-    const { descricao, setor, user, prioridade } = req.body;
+    const id_tarefa = Number(req.params.id_tarefa);
+    const { descricao_tarefa, setor_tarefa, usuario_id, prioridade_tarefa } = req.body;
 
-    const tarefas = await tarefasService.atualizarTarefa(id, descricao, setor, user, prioridade);
+    const tarefas = await tarefasService.atualizarTarefa(id_tarefa, descricao_tarefa, setor_tarefa, usuario_id, prioridade_tarefa);
 
     if (!tarefas) {
         return res.status(404).json({
@@ -65,9 +65,9 @@ async function atualizarTarefa(req, res) {
 
 async function deletarTarefa(req, res) {
 
-    const id = Number(req.params.id);
+    const id_tarefa = Number(req.params.id_tarefa);
 
-    const removido = await tarefasService.deletarTarefa(id);
+    const removido = await tarefasService.deletarTarefa(id_tarefa);
 
     if (!removido) {
         return res.status(404).json({

@@ -12,8 +12,8 @@ CREATE TABLE tarefa (
 	descricao_tarefa VARCHAR(500) NOT NULL,
 	setor_tarefa VARCHAR(100) NOT NULL,
 	prioridade_tarefa VARCHAR(100) NOT NULL,
-	data_cadastro_tarefa DATE NOT NULL,
-	status_tarefa VARCHAR(100) NOT NULL, 
+	data_cadastro_tarefa DATE NOT NULL DEFAULT CURRENT_DATE,
+	status_tarefa VARCHAR(100) NOT NULL DEFAULT 'a fazer', 
 	FOREIGN KEY (usuario_id) REFERENCES usuario(id_usuario)
 );
 
