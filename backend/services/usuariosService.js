@@ -73,7 +73,7 @@ async function atualizarUsuario(id_usuario, nome_usuario, email_usuario) {
 async function deletarUsuario(id_usuario) {
 
     const resultado = await pool.query(
-        "DELETE * FROM usuario WHERE id_usuario = $1",
+        "DELETE FROM usuario WHERE id_usuario = $1",
         [id_usuario]
     );
 

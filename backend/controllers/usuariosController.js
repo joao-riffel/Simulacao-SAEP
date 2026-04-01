@@ -45,7 +45,7 @@ async function contarUsuarios(req, res) {
 
     try {
 
-        const total = await usuariosService.contarUsuarios(req.app.get("db"));
+        const total = await usuariosService.contarUsuarios();
 
         res.status(200).json({
             total
